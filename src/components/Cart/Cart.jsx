@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 import CartItem from "./CartItem";
 import products from "../../productData";
+import Offcanvas from "../UI/Offcanvas";
 
 const Cart = (props) => {
   const cartitems = (
@@ -12,11 +13,11 @@ const Cart = (props) => {
     </ul>
   );
   return (
-    <div className="offcanvas">
-      <div className="content">
+    <Offcanvas onClose={props.onClose}>
+      <div >
         <div className="cart-head">
           <h2>Sepetim</h2>
-          <a href="/" className="cart-close" onClick={props.onclose}>
+          <a href="/" className="cart-close" onClick={props.onClose}>
             X
           </a>
         </div>
@@ -30,7 +31,7 @@ const Cart = (props) => {
           <button className="cart-clear">Temizle</button>
         </div>
       </div>
-    </div>
+    </Offcanvas>
   );
 };
 
