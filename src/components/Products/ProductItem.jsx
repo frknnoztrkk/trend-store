@@ -1,10 +1,11 @@
 import "./ProductItem.css";
 import Rating from "./Rating";
+import Card from "../UI/Card";
 const ProductItem = ({ product }) => {
   const { name, description, img, price } = product;
   return (
-    <li className="card">
-      <img src={img} alt={name} />
+    <Card>
+       <img src={img} alt={name} />
       <h3 className="product-title"></h3>
       <p>{description}</p>
       <div className="product-info">
@@ -12,7 +13,7 @@ const ProductItem = ({ product }) => {
         <span className="price">{price}₺</span>
       </div>
       <button className="add-to-cart">Sepete Ekle</button>
-    </li>
+    </Card>
   );
 };
 
