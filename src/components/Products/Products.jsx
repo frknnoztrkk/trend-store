@@ -1,14 +1,14 @@
-import React from "react";
-import "./Products.css"
 import products from "../../productData";
+import "./Products.css";
+import ProductItem from "./ProductItem";
 
 const Products = () => {
-    const productlist = products.map((item) => <li>{item.name}</li>)
+  const productList = products.map((product) => (
+    < ProductItem key={product.id} product={product}/>
+  ));
   return (
     <main className="products-wrapper">
-      <div className="products">
-        {productlist}
-      </div>
+      <ul className="products">{productList}</ul>
     </main>
   );
 };
