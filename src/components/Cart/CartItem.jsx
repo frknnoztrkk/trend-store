@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import "./CartItem.css";
+import { CartContext } from "../../context/CartProvider";
 
 const CartItem = (props) => {
+  const { removeItem } = useContext(CartContext);
   return (
     <li className="cart-item">
       <div className="cart-item-img">
@@ -22,7 +25,7 @@ const CartItem = (props) => {
             removeItem(props.product.id);
           }}
         >
-          X
+          x
         </a>
       </div>
     </li>
