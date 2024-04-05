@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import CartIcon from "../Cart/CartIcon";
 import { CartContext } from "../../context/CartProvider";
+import CartIcon from "../Cart/CartIcon";
 import "./HeaderCartButton.css";
 
 const HeaderCartButton = ({ onShowCart }) => {
   const cartCtx = useContext(CartContext);
 
-  const totalItemsCart = cartCtx.items.reduce((accumulator, currentItem) => {
+  const totalItemsInCart = cartCtx.items.reduce((accumulator, currentItem) => {
     return accumulator + currentItem.amount;
   }, 0);
 
@@ -16,7 +16,7 @@ const HeaderCartButton = ({ onShowCart }) => {
         <CartIcon />
       </span>
       <span>Sepetim</span>
-      <span className="badge">{totalItemsCart}</span>
+      <span className="badge">{totalItemsInCart}</span>
     </button>
   );
 };
